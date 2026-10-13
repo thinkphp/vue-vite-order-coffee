@@ -1,4 +1,4 @@
-# Fifth & Bean — Coffee Ordering App
+# Fifth & Bean (Coffee Ordering App)
 
 A responsive coffee shop storefront built with Vue 3 and Vite. Visitors can browse a specialty coffee menu, filter drinks by category, add items to a cart, and complete a demo checkout for pickup or delivery.
 
