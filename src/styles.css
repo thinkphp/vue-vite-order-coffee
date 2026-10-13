@@ -367,3 +367,77 @@ h1 em, h2 em { color: var(--orange); font-weight: 500; }
   .theme-toggle { gap: 5px; padding: 6px 7px; font-size: 9px; }
   .main-nav { margin-right: auto; margin-left: 16px; }
 }
+
+/* Larger, more readable type across the shop interface. */
+body { font-size: 16px; }
+.nav-link { font-size: 14px; }
+.nav-cart { font-size: 13px; }
+.brand-wordmark small { font-size: 8px; }
+.eyebrow { font-size: 11px; }
+.hero-copy > p { font-size: 16px; }
+.hero-button { font-size: 14px; }
+.hero-note { font-size: 12px; }
+.hero-note i { font-size: 11px; }
+.section-heading > p { font-size: 12px; }
+.category-tab { font-size: 12px; }
+.menu-count { font-size: 11px; }
+.product-meta { font-size: 10px; }
+.product-title-row h3 { font-size: 18px; }
+.product-title-row strong { font-size: 13px; }
+.product-content > p { font-size: 12px; }
+.add-button { min-height: 38px; font-size: 12px; }
+.cart-heading .eyebrow { font-size: 9px; }
+.empty-cart > strong { font-size: 18px; }
+.empty-cart p, .empty-cart a { font-size: 12px; }
+.cart-item-info > strong { font-size: 14px; }
+.cart-item-info > span, .quantity-control span { font-size: 11px; }
+.line-total { font-size: 12px; }
+.delivery-note { font-size: 11px; }
+.subtotal { font-size: 13px; }
+.subtotal strong { font-size: 16px; }
+.shipping-copy, .secure-note { font-size: 10px; }
+.checkout-button { font-size: 13px; }
+.clear-cart-button { font-size: 11px; }
+.story-copy > p { font-size: 14px; }
+.story-signoff { font-size: 14px; }
+.story-image-note { font-size: 11px; }
+.form-field, .fulfillment-options legend { font-size: 12px; }
+.form-field input { font-size: 13px; }
+.fulfillment-option strong { font-size: 12px; }
+.fulfillment-option small { font-size: 10px; }
+.summary-heading { font-size: 11px; }
+.summary-line, .summary-line strong { font-size: 12px; }
+.demo-disclaimer { font-size: 10px; }
+.confirmation-message { font-size: 12px; }
+.confirmation-number { font-size: 12px; }
+.footer > p { font-size: 15px; }
+.footer > span { font-size: 10px; }
+.toast { font-size: 13px; }
+.theme-toggle { font-size: 12px; }
+
+@media (max-width: 600px) {
+  .nav-link { font-size: 12px; }
+  .nav-cart { font-size: 11px; }
+  .brand-wordmark small { font-size: 6px; }
+  .category-tab { font-size: 10px; }
+  .product-title-row h3 { font-size: 15px; }
+  .product-content > p { font-size: 10px; }
+  .story-copy > p { font-size: 13px; }
+  .footer > span { font-size: 9px; }
+}
+
+/* Small second readability bump. */
+.nav-link, .nav-cart, .theme-toggle, .category-tab, .add-button,
+.checkout-button, .hero-button, .hero-copy > p, .story-copy > p,
+.empty-cart p, .empty-cart a, .delivery-note, .subtotal,
+.form-field, .fulfillment-options legend, .summary-line,
+.summary-line strong, .confirmation-message, .toast { font-size: calc(1em + 1px); }
+.product-title-row h3 { font-size: 19px; }
+.product-title-row strong { font-size: 14px; }
+.product-content > p { font-size: 13px; }
+.cart-item-info > strong { font-size: 15px; }
+@media (max-width: 600px) {
+  .category-tab { font-size: 11px; }
+  .product-title-row h3 { font-size: 16px; }
+  .product-content > p { font-size: 11px; }
+}

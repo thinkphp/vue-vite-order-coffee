@@ -1,4 +1,7 @@
+<script lang="jsx">
 import { computed, onUnmounted, ref, watch } from "vue";
+import SiteHeader from "./SiteHeader.vue";
+import SiteFooter from "./SiteFooter.vue";
 
 const products = [
   {
@@ -229,26 +232,6 @@ const formatPrice = (amount) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-function BrandMark() {
-  return (
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 36 36" fill="none">
-        <path
-          d="M7 15h19l-2 15H9L7 15Z"
-          fill="currentColor"
-        />
-        <path
-          d="M26 18h2.5a3.5 3.5 0 0 1 0 7H25M12 11V7h4v8m2-4V4h5v11m-14 4h16M11 33h14"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-      </svg>
-    </span>
-  );
-}
-
 function App() {
   const category = ref("All");
   const theme = ref("dark");
@@ -344,35 +327,11 @@ function App() {
 
   return () => (
     <div class={`site-shell theme-${theme.value}`}>
-      <header class="topbar">
-        <a class="brand" href="#acasa" aria-label="Fifth and Bean, home">
-          <BrandMark />
-          <span class="brand-wordmark">
-            FIFTH &amp; BEAN<span class="brand-dot">.</span>
-            <small>NEW YORK COFFEE</small>
-          </span>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a class="nav-link active" href="#meniu">Menu</a>
-          <a class="nav-link" href="#poveste">Our story</a>
-        </nav>
-        <button
-          class="theme-toggle"
-          type="button"
-          role="switch"
-          aria-checked={theme.value === "dark"}
-          aria-label="Schimbă tema"
-          onClick={() => theme.value = theme.value === "dark" ? "light" : "dark"}
-        >
-          <span class="theme-toggle-icon" aria-hidden="true">{theme.value === "dark" ? "☾" : "☀"}</span>
-          <span>{theme.value === "dark" ? "Dark" : "Light"}</span>
-          <span class="switch-track" aria-hidden="true"><span /></span>
-        </button>
-        <a class="nav-cart" href="#cos">
-          <span>Your order</span>
-          <span class="cart-count">{itemCount.value}</span>
-        </a>
-      </header>
+      <SiteHeader
+        itemCount={itemCount.value}
+        theme={theme.value}
+        onToggleTheme={() => theme.value = theme.value === "dark" ? "light" : "dark"}
+      />
 
       <main id="acasa">
         <section class="hero">
@@ -554,17 +513,7 @@ function App() {
         </section>
       </main>
 
-      <footer class="footer">
-        <a class="brand footer-brand" href="#acasa">
-          <BrandMark />
-          <span class="brand-wordmark">
-            FIFTH &amp; BEAN<span class="brand-dot">.</span>
-            <small>NEW YORK COFFEE</small>
-          </span>
-        </a>
-        <p>Good coffee changes the rhythm of your day.</p>
-        <span>© 2026 Fifth &amp; Bean. Made with care in New York City Adrian Statescu</span>
-      </footer>
+      <SiteFooter />
 
       {checkoutOpen.value && (
         <div
@@ -707,3 +656,5 @@ function App() {
 }
 
 export default { setup: App };
+
+</script>
